@@ -1,0 +1,397 @@
+/**
+ * Reset some basic elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/**
+ * Basic styling
+ */
+body {
+    font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+    color: $text-color;
+    background-color: $background-color;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-feature-settings: "kern" 1;
+    -moz-font-feature-settings: "kern" 1;
+    -o-font-feature-settings: "kern" 1;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+}
+
+
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+    margin-bottom: $spacing-unit / 2;
+}
+
+
+
+/**
+ * Images
+ */
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+
+
+/**
+ * Figures
+ */
+figure > img {
+    display: block;
+}
+
+figcaption {
+    font-size: $small-font-size;
+}
+
+
+
+/**
+ * Lists
+ */
+ul, ol {
+    margin-left: $spacing-unit;
+}
+
+li {
+    > ul,
+    > ol {
+        margin-bottom: 0;
+    }
+}
+
+
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: $base-font-weight;
+    color: $base-heading-color;
+
+    code {
+        background-color: rgb(250, 237, 233);
+    }
+}
+
+
+h1::before {
+    content: "/ ";
+}
+
+h2::before {
+    content: "//  ";
+}
+
+h3::before {
+    content: "///  ";
+}
+
+h4::before {
+    content: "////  ";
+}
+
+h5::before {
+    content: "/////  ";
+}
+
+h6::before {
+    content: "//////  ";
+}
+
+h1::before, 
+h2::before, 
+h3::before, 
+h4::before, 
+h5::before, 
+h6::before, {
+    display: inline;
+    font-size: 2em;
+    font-family: initial;
+    position: relative;
+    top: 0.15em;
+    letter-spacing: -3px;
+    line-height: 1em;
+}
+
+
+
+/**
+ * Links
+ */
+a {
+    color: $brand-color;
+    text-decoration: none;
+
+    &:visited {
+        color: darken($brand-color, 15%);
+    }
+
+    &:hover {
+        color: $text-color;
+        text-decoration: underline;
+    }
+}
+
+
+
+/**
+ * Blockquotes
+ */
+blockquote {
+    color: rgb(67, 78, 12);
+    border-left: 4px solid rgb(144, 161, 46);
+    background-color: rgb(233, 238, 203);
+    padding-left: $spacing-unit / 2;
+    font-size: 15px;
+    font-style: italic;
+    line-height: 2.5em;
+    border-radius: 0 3px 3px 0;
+
+    code {
+        background-color: rgb(144, 161, 46);
+        color: rgb(241, 243, 229);
+    }
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+
+/**
+ * Code formatting
+ */
+pre,
+code {
+    font-size: 14px;
+    border: 1px solid $grey-color-light;
+    border-radius: 3px;
+}
+
+code {
+    padding: 1px 5px;
+    background-color: rgb(227, 238, 253);
+}
+
+pre {
+    padding: 8px 12px;
+    overflow-x: auto;
+
+    > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+        background: none;
+    }
+}
+
+
+
+/**
+ * Wrapper
+ */
+.wrapper {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
+    @extend %clearfix;
+
+    @include media-query($on-laptop) {
+        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+        padding-right: $spacing-unit / 2;
+        padding-left: $spacing-unit / 2;
+    }
+}
+
+
+
+/**
+ * Clearfix
+ */
+%clearfix {
+
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+
+
+/**
+ * Icons
+ */
+.icon {
+
+    > svg {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+
+        path {
+            fill: $grey-color;
+        }
+    }
+}
+
+/* -- Responsive Table -------------- */
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 2rem;
+  background-color: #f6f8ea;
+  border-collapse: collapse;
+
+  pre, code {
+    background-color: #f7e6e6; // #fae2d2
+    border: 1px solid #d62727;
+  }
+  
+  thead {
+    border: 1px solid #404040;
+  }
+
+  tbody {
+    border: 1px solid #c7cc9f;
+  }
+
+  thead,
+  tbody,
+  tfoot {
+    > tr {
+      -webkit-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+    }    
+  }
+
+  thead,
+  tbody,
+  tfoot {
+    > tr {
+      th, td {
+        text-align: left;
+        padding: .9rem;
+        vertical-align: top;
+        border-top: 0;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        border: 0;
+        border-bottom: 1px solid #c7cc9f;
+      }
+    }
+  }
+
+  thead > tr > th {
+      font-weight: 400;
+      background: #404040;
+      color: #90a12e;
+      vertical-align: bottom;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  }
+
+  caption + thead > tr:first-child,
+  colgroup + thead > tr:first-child,
+  thead:first-child > tr:first-child {
+    th, td {
+      border-top: 0;
+    }
+  }
+
+  tbody + tbody {
+      border-top: 1px solid rgba(0, 0, 0, 0.12);
+  }
+
+  thead {
+    th, td {
+      border-bottom-width: 2px;
+    }
+  }
+
+  tbody  {
+    > tr:nth-child(odd) {
+      th, td {
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  table {
+    margin-bottom: 0;
+    border: 0;
+    background-color: transparent;
+
+    thead, tfoot {
+      display: none;
+    }
+
+    > tbody {
+      display: block;
+      border: 0;
+
+      > tr {
+        display: block;
+        background-color: #f6f8ea;
+        border: 2px solid #c7cc9f;
+        border-radius: 0.5rem;
+        margin-bottom: 1.6rem;
+
+        &:nth-child(odd) {
+          background-color: #fff;
+
+          > td {
+            background: none;
+          }
+        }
+
+        > td {
+          background: none;
+          display: block;
+          vertical-align: middle;
+          border: 0;
+          border-bottom: 1px solid #c7cc9f;
+
+          &[data-title]:before {
+            content: attr(data-title);
+            float: left;
+            font-size: inherit;
+            font-weight: 400;
+            color: #757575;
+          }
+
+          &:last-child {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
