@@ -11,7 +11,7 @@ Go to github repo settings and enable Github Pages.
 ## Configuration
 
 1. Open `_config.yml`
-2. Look for `baseurl` and change from `/jekyll-notes-maker` to `\<your-repo-name>`
+2. Look for `baseurl` and change from `/jekyll-notes-maker` to `/<your-repo-name>`
 
 ## Create Pages
 
