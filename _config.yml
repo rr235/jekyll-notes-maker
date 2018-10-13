@@ -17,7 +17,7 @@ title: Quick References
 email: rash235r@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   These are my notes for personal use.
-baseurl: "/my-notes" # the subpath of your site, e.g. /blog
+baseurl: "/jekyll-notes-maker" # the subpath of your site, e.g. /blog
 url: "/" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: rr235
 
